@@ -29,7 +29,7 @@ def activate_virtualenv():
 def download_video(url, download_folder='/home/valdeir/Vídeos'):
     ydl_opts = {
         'format': 'best',
-        'outtmpl': f'{download_folder}/%(title)s.%(ext)s',  # Define o caminho de saída
+        'outtmpl': f'{download_folder}/%(title)s.%(ext)s',
     }
 
     with YoutubeDL(ydl_opts) as ydl:
@@ -41,7 +41,7 @@ def download_music(link, download_folder='/home/valdeir/Músicas'):
 
     ydl_opts = {
         'format': 'bestaudio/best',
-        'outtmpl': f'{download_folder}/%(title)s.%(ext)s',  # Define o caminho de saída
+        'outtmpl': f'{download_folder}/%(title)s.%(ext)s',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
@@ -57,7 +57,9 @@ def choose_download_folder():
     # Cria uma janela de diálogo para escolher uma pasta
     root = tk.Tk()
     root.withdraw()  # Esconde a janela principal
-    folder_selected = filedialog.askdirectory(title="Escolha o diretório de destino")
+    folder_selected = filedialog.askdirectory(
+        title="Escolha o diretório de destino"
+        )
     return folder_selected
 
 
@@ -69,8 +71,12 @@ def main():
     # Adiciona um argumento do tipo string
     parser.add_argument('url', type=str, help="A string que você quer passar")
 
-    parser.add_argument('-m', '--music', action='store_true', help="Ativa o sinalizador de música")
-    parser.add_argument('-d', '--dir', action='store_true', help="Define se vai usar uma pasta personalizada")
+    parser.add_argument('-m', '--music', action='store_true',
+                        help="Ativa o sinalizador de música"
+                        )
+    parser.add_argument('-d', '--dir', action='store_true',
+                        help="Define se vai usar uma pasta personalizada"
+                        )
     args = parser.parse_args()
 
     download_folder = None
