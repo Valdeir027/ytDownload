@@ -20,4 +20,4 @@ ytdownload "<url>"
 
 ### Caminho de Download Padrão
 - **Linux**: A pasta de download padrão para vídeos é Videos e para músicas é Musicas na sua home.
-- **Windows**: Recomendamos que sempre utilize o parâmetro `-d` para especificar o caminho de download, até que seja implementado o suporte para pastas padrão no Linux.
+- **Windows**: Recomendamos que sempre utilize o parâmetro `-d` para especificar o caminho de download, até que seja implementado o suporte para pastas padrão no Windows.
