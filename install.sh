@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt install python3-tk
+sudo apt install python3-tk ffmpeg
 
 
 python -m pip install -r requiroments.txt
